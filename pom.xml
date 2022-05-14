@@ -7,6 +7,7 @@
     <modules>
         <module>platform</module>
         <module>start</module>
+        <module>common</module>
     </modules>
 
     <parent>
@@ -21,11 +22,22 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-
+        <aspectj.version>1.9.5</aspectj.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.sayonaranokoto</groupId>
+                <artifactId>common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sayonaranokoto</groupId>
+                <artifactId>platform</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -34,6 +46,21 @@
                 <type>pom</type>
                 <scope>provided</scope>
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
     
