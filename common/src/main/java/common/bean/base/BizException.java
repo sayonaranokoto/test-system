@@ -14,8 +14,8 @@ public class BizException extends RuntimeException {
         this.msg = msg;
     }
 
-    public BizException(StatusCode statusCode) {
-        code = statusCode.getCode();
-        msg = statusCode.getMsg();
+    public BizException(BaseStatusCode baseStatusCode) {
+        code = baseStatusCode.getCode();
+        msg = baseStatusCode.getMsg();
     }
 }

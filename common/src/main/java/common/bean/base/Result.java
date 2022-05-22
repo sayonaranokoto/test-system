@@ -86,7 +86,7 @@ public class Result<T> implements Serializable {
         return result;
     }
 
-    public static <T> Result<T> fail(StatusCode statusCode) {
-        return fail(statusCode.getCode(), statusCode.getMsg());
+    public static <T> Result<T> fail(BaseStatusCode baseStatusCode) {
+        return fail(baseStatusCode.getCode(), baseStatusCode.getMsg());
     }
 }

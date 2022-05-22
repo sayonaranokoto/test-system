@@ -1,4 +1,4 @@
-package platform.entity.response;
+package common.bean.response;
 
 import lombok.Data;
 

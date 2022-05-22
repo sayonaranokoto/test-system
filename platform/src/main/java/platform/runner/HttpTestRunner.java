@@ -1,25 +1,23 @@
 package platform.runner;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.TypeReference;
+import common.bean.base.Result;
+import common.bean.enums.ProtocolEnum;
 import common.bean.request.HttpRequest;
-import platform.entity.response.HttpResponse;
+import common.bean.response.HttpResponse;
 import platform.entity.validation.HttpValidation;
 
-import java.util.Map;
 
 public class HttpTestRunner extends TestRunner<HttpRequest, HttpResponse, HttpValidation> {
-
     @Override
-    protected HttpRequest buildReplacedRequest(HttpRequest request, Map<String, String> variables) {
-        return null;
+    public ProtocolEnum getProtocol() {
+        return ProtocolEnum.HTTP;
     }
 
     @Override
-    protected HttpValidation buildReplacedValidation(HttpValidation validation, Map<String, String> variables) {
-        return null;
-    }
-
-    @Override
-    protected HttpResponse execRequest(HttpRequest request) {
-        return null;
+    protected HttpResponse toResp(String str) {
+        Result<HttpResponse> result = JSON.parseObject(str, new TypeReference<Result<HttpResponse>>(){});
+        return result.getData();
     }
 }

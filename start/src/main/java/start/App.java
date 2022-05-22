@@ -8,7 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan({
         "platform",
         "common",
-        "start"
+        "start",
+        "agent"
 })
 public class App {
     public static void main(String[] args) {

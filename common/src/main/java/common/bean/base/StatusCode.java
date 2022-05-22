@@ -1,6 +1,6 @@
 package common.bean.base;
 
-public enum StatusCode {
+public enum StatusCode implements BaseStatusCode {
     OK(0L, "OK"),
     UNKNOWN(-1L, "UNKNOWN"),
     ;
@@ -13,10 +13,12 @@ public enum StatusCode {
         this.msg = msg;
     }
 
+    @Override
     public long getCode() {
         return code;
     }
 
+    @Override
     public String getMsg() {
         return msg;
     }
